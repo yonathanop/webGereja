@@ -26,19 +26,19 @@
         <div class="collapse navbar-collapse d-flex justify-content-center w-100" id="navbarNav">
           <ul class="navbar-nav flex-row mx-auto" style="transform: translateX(50px);">
             <li class="nav-item px-3">
-              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="/home">Home</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link active text-white" aria-current="page" href="#">Tentang</a>
+              <a class="nav-link active text-white" aria-current="page" href="/tentang">Tentang</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link active text-white" aria-current="page" href="#">Renungan</a>
+              <a class="nav-link active text-white" aria-current="page" href="/renungan">Renungan</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link active text-white" aria-current="page" href="#">Persembahan</a>
+              <a class="nav-link active text-white" aria-current="page" href="/persembahan">Persembahan</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link active text-white" aria-current="page" href="#">Kontak</a>
+              <a class="nav-link active text-white" aria-current="page" href="/kontak">Kontak</a>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -61,6 +61,9 @@
       <p class="lead text-white">Mari Bergabung dalam Ibadah yang tersedia sebagai berikut</p>
     </div>
    </section>
+   <section id="hero1" class="py-5" style="background-image: url('{{ asset('img/hero1.png') }}');">
+       </section>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>
