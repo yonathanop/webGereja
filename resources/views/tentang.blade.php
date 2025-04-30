@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home | GPdI House of Worship</title>
+    <title>Tentang | GPdI House of Worship</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg "style="background-color: #0a3d62;">
+    <nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #0a3d62;">
       <div class="container-fluid">
         <a class="navbar-brand text-white d-flex align items-center" href="#">
           {{-- Logo --}}
@@ -23,8 +23,8 @@
         </button>
 
         {{-- Menu Navbar --}}
-        <div class="collapse navbar-collapse d-flex justify-content-center w-100" id="navbarNav">
-          <ul class="navbar-nav flex-row mx-auto" style="transform: translateX(50px);">
+        <div class="collapse navbar-collapse justify-content-lg-center w-100" id="navbarNav">
+          <ul class="navbar-nav mx-auto text-start text-lg-center">
             <li class="nav-item px-3">
               <a class="nav-link active text-white" aria-current="page" href="/home">Home</a>
             </li>
@@ -41,17 +41,24 @@
               <a class="nav-link active text-white" aria-current="page" href="/kontak">Kontak</a>
             </li>
           </ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <!-- Login untuk Mobile (masuk ke dalam menu utama) -->
+          <ul class="navbar-nav d-lg-none ps-3">
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="/login">Login</a>
+              <a class="nav-link active text-white" href="/login">Login</a>
             </li>
           </ul>
+
+          <!-- Login untuk Desktop (posisi kanan) -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-lg-flex">
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="/login">Login</a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </nav>
-    <div class="text-center col-4 offset-4" >
-        <h5>GPdI House of Worship Yogyakarta</h5>
-    </div>
+    
 
     {{-- Hero Section --}}
 

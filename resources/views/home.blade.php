@@ -90,7 +90,10 @@
           <span class="visually-hidden">Next</span>
         </button>
       </section>
-      
+      <div class="map-responsive">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.95318567254!2d110.37032477450941!3d-7.79478157736339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a582bed009f4f%3A0x3232ac2099527f3a!2sGPdI%20Hayamwuruk!5e0!3m2!1sen!2sid!4v1745978129309!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map-location"></iframe>
+      </div>
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
