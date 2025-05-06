@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse justify-content-lg-center w-100" id="navbarNav">
           <ul class="navbar-nav mx-auto text-start text-lg-center">
             <li class="nav-item px-3">
-              <a class="nav-link active text-white" aria-current="page" href="/home">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item px-3">
               <a class="nav-link active text-white" aria-current="page" href="/tentang">Tentang</a>

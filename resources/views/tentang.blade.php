@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse justify-content-lg-center w-100" id="navbarNav">
           <ul class="navbar-nav mx-auto text-start text-lg-center">
             <li class="nav-item px-3">
-              <a class="nav-link active text-white" aria-current="page" href="/home">Home</a>
+              <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item px-3">
               <a class="nav-link active text-white" aria-current="page" href="/tentang">Tentang</a>
@@ -54,23 +54,9 @@
               <a class="nav-link active text-white" href="/login">Login</a>
             </li>
           </ul>
-
         </div>
       </div>
     </nav>
-    
-
-    {{-- Hero Section --}}
-
-   <section id="hero" class="py-5" style="background-image: url('{{ asset('img/lilin.jpg') }}');">
-    <div class="container text-center">
-      <h1 class="display-4 fw-bold text-white">Selamat Datang di GPdI House of Worship</h1>
-      <p class="lead text-white">Mari Bergabung dalam Ibadah yang tersedia sebagai berikut</p>
-    </div>
-   </section>
-   <section id="hero1" class="py-5" style="background-image: url('{{ asset('img/hero1.png') }}');">
-       </section>
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
   </body>
 </html>
