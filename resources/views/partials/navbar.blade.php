@@ -2,7 +2,7 @@
     <div class="container-fluid">
       <a class="navbar-brand text-white d-flex align items-center" href="#">
         {{-- Logo --}}
-        <img src="{{ asset('img/logoGPdI.jpg') }}" href="/" alt="GPdI" width="50" height="50" class="me-2">
+        <img src="{{ asset('img/logoGPdI.jpg') }}" alt="GPdI" width="50" height="50" class="me-2">
         <div class="d-flex flex-column">
           <span class="fw-bold" style="font-size: 18px;">GPdI</span>
           <small style="font-size: 12px;">HOUSE OF WORSHIP</small>

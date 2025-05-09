@@ -7,7 +7,7 @@
           <div class="d-flex align-items-center justify-content-center vh-100 text-white" style="background-image: url('{{ asset('img/lilin.jpg') }}'); background-size: cover; background-position: center;">          </div>
           </div>
         <div class="carousel-item">
-          <div class="d-flex align-items-center justify-content-center vh-100 text-white" style="background-image: url('{{ asset('img/hero1.png') }}'); background-size: cover; background-position: center;">
+          <div class="d-flex align-items-center justify-content-center vh-100 text-white" style="background-image: url('{{ asset('img/hero1.png') }}'); background-size: cover ; background-position: center;">
           </div>
         </div>
       </div>
