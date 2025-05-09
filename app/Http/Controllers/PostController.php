@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         return view('renungan', [
-            "title" => "Posts",
+            "title" => "Renungan",
             "posts" => Post::all()
         ]);
     }
@@ -40,9 +40,9 @@ class PostController extends Controller
      */
     public function show($slug)
     {
-        return view('renungan', [
+        return view('post', [
             "title" => "Single Post",
-            "posts" => Post::find($slug)
+            "post" => Post::find($slug)
         ]);
     }
 

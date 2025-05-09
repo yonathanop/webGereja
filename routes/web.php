@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,37 +17,7 @@ Route::get('/tentang', function () {
     ]);
 });
 
-Route::get('/renungan', function () {
-    $renungan_posts = [
-        [
-            "title" => "Judul Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Penulis pertama",
-            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eveniet eos magni unde officiis,
-            quaerat ratione rem nobis repellendus voluptatum, modi quibusdam mollitia neque doloremque inventore qui,
-            illum itaque dignissimos consectetur sunt debitis! Corporis ut odit, ab id facere sed voluptatum atque,
-            necessitatibus suscipit corrupti, sunt totam est eligendi dolore ad culpa! Perferendis temporibus error,
-            unde architecto, delectus quod eos deleniti at sint facere quos, dignissimos illum accusantium. Eaque
-            natus aliquam labore repellat obcaecati iste ducimus animi voluptates ad aspernatur!"
-        ],
-        [
-            "title" => "Judul kedua",
-            "slug" => "judul-post-kedua",
-            "author" => "Penulis kedua",
-            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eveniet eos magni unde officiis,
-            quaerat ratione rem nobis repellendus voluptatum, modi quibusdam mollitia neque doloremque inventore qui,
-            illum itaque dignissimos consectetur sunt debitis! Corporis ut odit, ab id facere sed voluptatum atque,
-            necessitatibus suscipit corrupti, sunt totam est eligendi dolore ad culpa! Perferendis temporibus error
-            unde architecto, delectus quod eos deleniti at sint facere quos, dignissimos illum accusantium. Eaque,
-            natus aliquam labore repellat obcaecati iste ducimus animi voluptates ad aspernatur!"
-        ],
-    ];
-    
-    return view('renungan', [
-        "title" => "Renungan",
-        "posts" => $renungan_posts
-    ]);
-});
+Route::get('/renungan', [PostController::class, 'index']);
 
 Route::get('/persembahan', function () {
     return view('persembahan', [
@@ -67,40 +39,5 @@ Route::get('/login', function () {
 
 // Halaman Single Post
 
-Route::get('posts/{slug}', function($slug){
-    $renungan_posts = [
-        [
-            "title" => "Judul Pertama",
-            "slug" => "judul-post-pertama",
-            "author" => "Penulis pertama",
-            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eveniet eos magni unde officiis,
-            quaerat ratione rem nobis repellendus voluptatum, modi quibusdam mollitia neque doloremque inventore qui,
-            illum itaque dignissimos consectetur sunt debitis! Corporis ut odit, ab id facere sed voluptatum atque,
-            necessitatibus suscipit corrupti, sunt totam est eligendi dolore ad culpa! Perferendis temporibus error,
-            unde architecto, delectus quod eos deleniti at sint facere quos, dignissimos illum accusantium. Eaque,
-            natus aliquam labore repellat obcaecati iste ducimus animi voluptates ad aspernatur!"
-        ],
-        [
-            "title" => "Judul kedua",
-            "slug" => "judul-post-kedua",
-            "author" => "Penulis kedua",
-            "body" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum eveniet eos magni unde officiis,
-            quaerat ratione rem nobis repellendus voluptatum, modi quibusdam mollitia neque doloremque inventore qui,
-            illum itaque dignissimos consectetur sunt debitis! Corporis ut odit, ab id facere sed voluptatum atque,
-            necessitatibus suscipit corrupti, sunt totam est eligendi dolore ad culpa! Perferendis temporibus error,
-            unde architecto, delectus quod eos deleniti at sint facere quos, dignissimos illum accusantium. Eaque,
-            natus aliquam labore repellat obcaecati iste ducimus animi voluptates ad aspernatur!"
-        ],
-    ];
-    $new_post = [];
-    foreach($renungan_posts as $post){
-        if($post["slug"] === $slug){
-            $new_post = $post;
-        }
-    }
+Route::get('posts/{slug}', [PostController::class, 'show']);
 
-    return view('post', [
-        "title" => "Single Post",
-        "post" => $new_post
-    ]);
-});
