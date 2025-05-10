@@ -3,11 +3,13 @@
 @section('container')
 
     @foreach ($posts as $post)
-    <article class="mb-5">
-        <h2>
-            <a href="/posts/{{ $post->slug }}">{{ $post->title }}</a>
-        </h2>
+    <article class="mb-5 border-bottom pb-4">
+        <h2><a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a></h2>
+
+        <p>Oleh <a href="#" class="text-decoration-none">{{ $post->user->name }}</a> <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a></p>
         <p>{{ $post->excerpt }}</p>
+
+        <a href="/posts/{{ $post->slug }}" class="text-decoration-none">Baca Selengkapnya</a>
     </article>
        
     @endforeach
