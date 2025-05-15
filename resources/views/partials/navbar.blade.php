@@ -31,6 +31,7 @@
             <a class="nav-link {{ ($title === "Kontak") ? 'active' : ''}}" aria-current="page" href="/kontak">Kontak</a>
           </li>
         </ul>
+        
         <!-- Login untuk Mobile (masuk ke dalam menu utama) -->
         <ul class="navbar-nav d-lg-none ps-3">
           <li class="nav-item">
@@ -40,11 +41,28 @@
 
         <!-- Login untuk Desktop (posisi kanan) -->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-lg-flex">
+          @auth
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Selamat Datang, {{ auth()->user()->name }}
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <form action="/logout" method="post">
+                @csrf
+                <button type="submit" class="dropdown-item">Logout</button>
+              </form>
+            </li>
+          </ul>
+        </li>
+          @else
           <li class="nav-item">
             <a class="nav-link {{ ($title === "Login") ? 'active' : ''}}" href="/login">Login</a>
           </li>
+          @endauth
         </ul>
-
       </div>
     </div>
 </nav>
