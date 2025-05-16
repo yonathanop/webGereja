@@ -2,7 +2,6 @@
 
 
 use App\Models\User;
-use App\Models\Category;
 
 use Illuminate\Support\Facades\Route;
 
@@ -46,19 +45,6 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
-Route::get('/categories', function() {
-    return view ('categories', [
-        'title' => 'Post Kategori',
-        'categories' => Category::all()
-    ]);
-});
-
-Route::get('/categories/{category:slug}', function(Category $category){
-    return view ('renungan', [
-        'title' => "Post dengan kategori : $category->name",
-        'posts' => $category->posts->load('author', 'category')
-    ]);
-});
 
 Route::get('/authors/{author:username}', function(User $author){
     return view ('renungan', [
@@ -71,7 +57,7 @@ Route::get('/dashboard' , function(){
     return view('dashboard.index');
 })->middleware('auth');
 
-
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 

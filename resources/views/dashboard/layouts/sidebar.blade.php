@@ -15,7 +15,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="/dashboard/posts">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
                                         <svg class="bi">
                                             <use xlink:href="#file-earmark"></use>
                                         </svg>
@@ -28,7 +28,7 @@
 
                         <!-- Bagian logout fix di bawah -->
                         <div class="logout-footer border-top p-3">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                            <a class="nav-link d-flex align-items-center gap-2" href="/">
                                 <svg class="bi">
                                     <use xlink:href="#door-closed"></use>
                                 </svg>

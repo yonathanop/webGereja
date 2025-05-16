@@ -42,6 +42,17 @@
     background-color: rgba(0, 0, 0, 0.25);
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
 }
+.nav-link {
+    color: black !important;
+    font-weight: normal;
+}
+
+.nav-link.active {
+    color: black !important;
+    font-weight: bold;
+    background-color: #e9ecef; /* atau warna lain sesuai desain kamu */
+    border-radius: 0.375rem; /* biar ada efek rounded */
+}
 
 .navbar .form-control {
     padding: 0.75rem 1rem;

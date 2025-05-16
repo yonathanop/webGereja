@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardPostController extends Controller
@@ -23,7 +25,9 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.posts.create', [
+            'authors' => User::all()
+        ]);
     }
 
     /**
@@ -31,7 +35,19 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validatedData = $request->validate([
+        'title' => 'required|max:255',
+        'slug' => 'required|unique:posts',
+        'user_id' => 'required',
+        'body' => 'required',
+    ]);
+    
+        $validatedData['author'] = Auth::user()->id;
+        $validatedData['excerpt'] = str()->limit(strip_tags($request->body), 100);
+
+        Post::create($validatedData);
+
+        return redirect('/dashboard/posts')->with('success', 'Renungan baru berhasil ditambahkan!');
     }
 
     /**
@@ -49,7 +65,10 @@ class DashboardPostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('dashboard.posts.edit', [
+            'post' => $post,
+            'authors' => User::all()
+        ]);
     }
 
     /**
@@ -57,7 +76,22 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $rules = [
+        'title' => 'required|max:255',
+        'user_id' => 'required',
+        'body' => 'required',
+    ];
+    if($request->slug != $post->slug) {
+        $rules['slug'] = 'required|unique:posts';
+    }
+    $validatedData = $request->validate($rules);
+    $validatedData['user_id'] = Auth::user()->id;
+        $validatedData['excerpt'] = str()->limit(strip_tags($request->body), 100);
+
+        Post::where('id', $post->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/posts')->with('success', 'Renungan berhasil diupdate!');
     }
 
     /**
@@ -65,6 +99,13 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+       Post::destroy($post->id);
+
+        return redirect('/dashboard/posts')->with('success', 'Renungan berhasil Dihapus!');
+    }
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }
