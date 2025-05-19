@@ -12,7 +12,14 @@
         <h2>{{ $post->title }}</h2>
 
 
-        <p>Oleh <a href="/authors/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a></p>
+        <p>Oleh <a href="/authors/{{ $post->author->username }}" \
+            class="text-decoration-none">{{ $post->author->name }}</a></p>
+
+            @if ($post->image)
+            <div style="max-height: 350px; overflow:hidden;">
+                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="{{ $post->title }}">
+            </div>
+        @endif
 
         {!! $post->body !!}
     </article>

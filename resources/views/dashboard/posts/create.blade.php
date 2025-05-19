@@ -5,11 +5,12 @@
         <h1 class="h2">Buat Renungan Baru</h1>
     </div>
     <div class="col-lg-8">
-        <form method="post" action="/dashboard/posts" class="mb-5">
+        <form method="post" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="title">Judul Renungan</label>
-                <input type="text" class="form-control @error('title') is-invalid  @enderror" id="title" name="title" required autofocus value="{{ old('title') }}">
+                <input type="text" class="form-control @error('title') is-invalid  @enderror" id="title"
+                    name="title" required autofocus value="{{ old('title') }}">
                 @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -18,7 +19,8 @@
             </div>
             <div class="form-group">
                 <label for="slug">Slug</label>
-                <input type="text" class="form-control @error('slug') is-invalid  @enderror" id="slug" name="slug" required value="{{ old('slug') }}">
+                <input type="text" class="form-control @error('slug') is-invalid  @enderror" id="slug"
+                    name="slug" required value="{{ old('slug') }}">
                 @error('slug')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -29,13 +31,24 @@
                 <label for="author">Penulis Renungan</label>
                 <select class="form-select" name="author">
                     @foreach ($authors as $author)
-                    @if(old('author') == $author->id)
-                        <option value="{{ $author->id }}" selected>{{ $author->name }}</option>
-                    @else
-                        <option value="{{ $author->id }}">{{ $author->name }}</option>
-                    @endif
+                        @if (old('author') == $author->id)
+                            <option value="{{ $author->id }}" selected>{{ $author->name }}</option>
+                        @else
+                            <option value="{{ $author->id }}">{{ $author->name }}</option>
+                        @endif
                     @endforeach
                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Gambar Ilustrasi</label>
+                <img class="img-preview img-fluid mb-4 col-sm-5">
+                <input class="form-control @error('image') is-invalid  @enderror" type="file" id="image"
+                    name="image" onchange="previewImage()">
+                @error('image')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="body">Text Renungan</label>
@@ -64,5 +77,18 @@
         document.addEventListener('trix-file-accept', function(e) {
             e.preventDefault()
         })
+        function previewImage() {
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
     </script>
 @endsection

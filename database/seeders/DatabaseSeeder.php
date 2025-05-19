@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Category;
 use App\Models\Post;
 
 
@@ -16,16 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(5)->create();
+        User::create([
+            'name' => 'Yonathan Okta',
+            'username' => 'yonathan',
+            'email' => 'yonathan@gmail.com',
+            'password' => bcrypt('12345678'),
+        ]);
 
-        Category::create([
-            'name' => 'Web Programming',
-            'slug' => 'web-programming'
-        ]);
-        Category::create([
-            'name' => 'Android Programming',
-            'slug' => 'android-programming'
-        ]);
+        User::factory(3)->create();
 
         Post::factory(20)->create();
 

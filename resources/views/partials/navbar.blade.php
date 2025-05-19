@@ -43,9 +43,9 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-lg-flex">
           @auth
           <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown">
             Selamat Datang, {{ auth()->user()->name }}
-          </a>
+          </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
             <li><hr class="dropdown-divider"></li>

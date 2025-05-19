@@ -18,6 +18,11 @@
             <button class="btn btn-danger" onclick="return confirm('Apakah anda yakin akan menghapus data ?')"><i
                     class="bi bi-x-circle"></i>Delete</button>
         </form>
+        @if ($post->image)
+            <div style="max-height: 350px; overflow:hidden;">
+                <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid mt-3" alt="{{ $post->title }}">
+            </div>
+        @endif
         <p>Oleh <a href="/authors/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a>
 
             {!! $post->body !!}
