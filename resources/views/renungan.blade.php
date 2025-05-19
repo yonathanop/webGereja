@@ -18,7 +18,7 @@
                 <p>Oleh <a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}</small></p>
                 <p class="card-text">{{ $posts[0]->excerpt }}</p>
 
-                <a href="/renungan/{{ $posts[0]->slug }}" class="tex-decoration-none btn btn-primary">Baca Selengkapnya</a>
+                <a href="/renungan/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Baca Selengkapnya</a>
                 </div>
         </div>
     @else

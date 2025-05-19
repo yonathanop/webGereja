@@ -15,9 +15,10 @@
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">No</th>
+                    <th scope="col">tanggal</th>
                     <th scope="col">Judul</th>
-                    <th scope="col">Penulis</th>
+                    <th scope="col">Pengkhotbah</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>

@@ -27,7 +27,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="author">Penulis Renungan</label>
+                <label for="author">Pengkhotbah</label>
                 <select class="form-select" name="user_id">
                     @foreach ($authors as $author)
                     @if(old('author', $post->author) == $author->id)

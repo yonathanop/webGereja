@@ -41,7 +41,7 @@ class DashboardPostController extends Controller
         'title' => 'required|max:255',
         'slug' => 'required|unique:posts',
         'author' => 'required',
-        'image' => 'image|file|max:1024',
+        'image' => 'image|file|max:2048',
         'body' => 'required',
     ]);
         if($request->file('image')) {
@@ -113,8 +113,10 @@ class DashboardPostController extends Controller
      */
     public function destroy(Post $post)
     {
-       Post::destroy($post->id);
-
+        if($post->image) {
+            Storage::delete($post->image);
+        }
+        Post::destroy($post->id);
         return redirect('/dashboard/posts')->with('success', 'Renungan berhasil Dihapus!');
     }
     public function checkSlug(Request $request)

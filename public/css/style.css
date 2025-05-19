@@ -17,3 +17,14 @@
     border-radius: 0;
     margin-bottom: -1px;
 }
+.footer {
+    position:fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: blue;
+    height: 50px;
+    color: white;
+    text-align: center;
+    line-height: 60px; /* agar teks di tengah secara vertikal */
+}

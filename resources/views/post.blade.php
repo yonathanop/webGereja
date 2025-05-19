@@ -2,13 +2,6 @@
 
 @section('container')
     <article>
-        <div class="container">
-            <div class="row justify content-center">
-                <div class="col-md-8">
-
-                </div>
-            </div>
-        </div>
         <h2>{{ $post->title }}</h2>
 
 
@@ -21,8 +14,8 @@
             </div>
         @endif
 
-        {!! $post->body !!}
+        <div class="post-body" style="text-align:justify">{!! $post->body !!}</div>
     </article>
-    
+
     <a href="/renungan" class="d-block mt-3">Kembali ke Daftar Renungan</a>
 @endsection
