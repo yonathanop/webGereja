@@ -7,7 +7,8 @@
                         <div class="flex-grow-1 overflow-auto">
                             <ul class="nav flex-column p-3">
                                 <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard') ? 'active' : '' }}"
+                                        aria-current="page" href="/dashboard">
                                         <svg class="bi">
                                             <use xlink:href="#house-fill"></use>
                                         </svg>
@@ -15,26 +16,27 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'active' : '' }}"
+                                        href="/dashboard/posts">
                                         <svg class="bi">
                                             <use xlink:href="#file-earmark"></use>
                                         </svg>
-                                        Hero Posts
+                                        Buat Renungan
                                     </a>
                                 </li>
                                 <!-- Tambahkan item lainnya jika perlu -->
                             </ul>
                         </div>
-
-                        <!-- Bagian logout fix di bawah -->
-                        <div class="logout-footer border-top p-3">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/">
+                        <form action="/logout" method="POST" class="logout-footer border-top p-3">
+                            @csrf
+                            <button type="submit"
+                                class="nav-link d-flex align-items-center gap-2 btn btn-link p-0 m-0">
                                 <svg class="bi">
                                     <use xlink:href="#door-closed"></use>
                                 </svg>
                                 Logout
-                            </a>
-                        </div>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
