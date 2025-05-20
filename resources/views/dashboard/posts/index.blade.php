@@ -16,7 +16,7 @@
             <thead>
                 <tr>
                     <th scope="col">No</th>
-                    <th scope="col">tanggal</th>
+                    <th scope="col">Tanggal</th>
                     <th scope="col">Judul</th>
                     <th scope="col">Pengkhotbah</th>
                     <th scope="col">Action</th>
@@ -26,6 +26,7 @@
                 @foreach ($posts as $post)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td>{{ $post->created_at->timezone('Asia/Jakarta')->format('d-m-Y') }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->author->name }}</td>
                         <td>

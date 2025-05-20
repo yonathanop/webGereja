@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class DashboardPostController extends Controller
 {
@@ -26,6 +27,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
+        
         return view('dashboard.posts.create', [
             'authors' => User::all()
         ]);
@@ -124,4 +126,9 @@ class DashboardPostController extends Controller
         $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
     }
+
+    
+
+
+
 }
