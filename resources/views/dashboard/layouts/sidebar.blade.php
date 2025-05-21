@@ -25,18 +25,20 @@
                                     </a>
                                 </li>
                                 <!-- Tambahkan item lainnya jika perlu -->
+                                <li>
+                                    <form action="/logout" method="POST" class="logout-footer border-top p-3">
+                                        @csrf
+                                        <button type="submit"
+                                            class="nav-link d-flex align-items-center gap-2 btn btn-link p-0 m-0">
+                                            <svg class="bi">
+                                                <use xlink:href="#door-closed"></use>
+                                            </svg>
+                                            Logout
+                                        </button>
+                                    </form>
+                                </li>
                             </ul>
                         </div>
-                        <form action="/logout" method="POST" class="logout-footer border-top p-3">
-                            @csrf
-                            <button type="submit"
-                                class="nav-link d-flex align-items-center gap-2 btn btn-link p-0 m-0">
-                                <svg class="bi">
-                                    <use xlink:href="#door-closed"></use>
-                                </svg>
-                                Logout
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>

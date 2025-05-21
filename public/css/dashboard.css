@@ -70,13 +70,11 @@
 }
 html,
 body {
-    min-height: 100vh;
-}
-
-#sidebarMenu {
-    min-height: 100%;
+    height: 100vh;
 }
 
 .flex-grow-1 {
     overflow-y: auto;
 }
+
+

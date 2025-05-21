@@ -22,7 +22,7 @@
             <a class="nav-link {{ ($title === "Tentang") ? 'active' : ''}}" aria-current="page" href="/tentang">Tentang</a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link {{ ($title === "Renungan") ? 'active' : ''}}" aria-current="page" href="/renungan">Renungan</a>
+            <a class="nav-link {{ ($title === "Daftar Renungan") ? 'active' : ''}}" aria-current="page" href="/renungan">Renungan</a>
           </li>
           <li class="nav-item px-3">
             <a class="nav-link {{ ($title === "Persembahan") ? 'active' : ''}}" aria-current="page" href="/persembahan">Persembahan</a>
