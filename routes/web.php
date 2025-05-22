@@ -9,6 +9,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\KontakController;
 
 Route::get('/', function () {
     return view('home', [
@@ -60,4 +61,5 @@ Route::get('/dashboard' , function(){
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-
+Route::get('/dashboard/kontak', [KontakController::class, 'index']);
+Route::post('/dashboard/kontak', [KontakController::class, 'store']);
