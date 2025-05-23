@@ -1,10 +1,4 @@
             <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
-                <nav class="navbar navbar-expand-md bg-light">
-                    <button class="navbar-toggler d-md-none" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu"
-                        type="button" aria-controls="sidebarMenu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </nav>
                 <div class="offcanvas-md offcanvas-start bg-body-tertiary" tabindex="-1" id="sidebarMenu"
                     aria-labelledby="sidebarMenuLabel">
                     <div class="offcanvas-body d-flex flex-column p-0 pt-lg-3" style="height: 100vh;">
@@ -15,24 +9,22 @@
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard') ? 'active' : '' }}"
                                         aria-current="page" href="/dashboard">
-                                        <svg class="bi">
-                                            <use xlink:href="#house-fill"></use>
-                                        </svg>
+                                        <i class="bi bi-house-door-fill"></i>
                                         Dashboard
                                     </a>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/banner*') ? 'active' : '' }}"
+                                        href="/dashboard/banner">
+                                        <i class="bi bi-upload"></i>
+                                        Menambah Banner
+                                    </a>
+                                </li>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'active' : '' }}"
                                         href="/dashboard/posts">
                                         <i class="bi bi-file-earmark-plus-fill"></i>
                                         Buat Renungan
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/banner*') ? 'active' : '' }}"
-                                        href="/dashboard/banner">
-                                        <i class="bi bi-upload"></i>
-                                        Menambah Banner
                                     </a>
                                 </li>
                                 <li class="nav-item">

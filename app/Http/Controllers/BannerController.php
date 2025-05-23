@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
@@ -11,7 +13,8 @@ class BannerController extends Controller
      */
     public function index()
     {
-        //
+        $banner = Banner::all();
+        return view('dashboard.banner.index', compact('banner'));
     }
 
     /**
@@ -19,7 +22,9 @@ class BannerController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.banner.create', [
+            'authors' => User::all()
+        ]);
     }
 
     /**
