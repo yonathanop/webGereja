@@ -16,18 +16,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($kontak as $k)
+                @foreach ($kontak as $ktk)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $k->nama }}</td>
-                        <td>{{ $k->no_HP }}</td>
-                        <td>{{ $k->pesan }}</td>
+                        <td>{{ $ktk->nama }}</td>
+                        <td>{{ $ktk->no_HP }}</td>
+                        <td>{{ $ktk->pesan }}</td>
                         <td>
-                            <a href="/dashboard/kontak/{{ $k }}" class="badge bg-info"><i
-                                    class="bi bi-eye"></i></a>
-                            <form action="/dashboard/kontak/{{ $k }}" method="post" class="d-inline">
-                                @method('delete')
+                            <form action="{{ route('kontak.destroy', $ktk->id) }}" method="post" class="d-inline">
                                 @csrf
+                                @method('delete')
                                 <button class="badge bg-danger border-0"
                                     onclick="return confirm('Apakah anda yakin akan menghapus data ?')"><i
                                         class="bi bi-x-circle"></i></button>

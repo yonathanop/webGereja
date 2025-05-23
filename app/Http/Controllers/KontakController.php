@@ -33,7 +33,7 @@ class KontakController extends Controller
     public function store(Request $request)
     {
          $validated = $request->validate([
-        'nama' => 'required',
+        'nama' => 'required|min:4',
         'no_HP' => 'required|max:15',
         'pesan' => 'required',
         ]);
@@ -46,7 +46,9 @@ class KontakController extends Controller
      */
     public function show(Kontak $kontak)
     {
-        //
+        return view('dashboard.kontak.show', [
+            'kontak' => $kontak
+        ]);
     }
 
     /**

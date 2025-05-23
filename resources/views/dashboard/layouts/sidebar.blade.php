@@ -24,18 +24,21 @@
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'active' : '' }}"
                                         href="/dashboard/posts">
-                                        <svg class="bi">
-                                            <use xlink:href="#file-earmark"></use>
-                                        </svg>
+                                        <i class="bi bi-file-earmark-plus-fill"></i>
                                         Buat Renungan
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/banner*') ? 'active' : '' }}"
+                                        href="/dashboard/banner">
+                                        <i class="bi bi-upload"></i>
+                                        Menambah Banner
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/kontak*') ? 'active' : '' }}"
                                         href="/dashboard/kontak">
-                                        <svg class="bi">
-                                            <use xlink:href="#file-earmark"></use>
-                                        </svg>
+                                        <i class="bi bi-envelope-open"></i>
                                         Kotak Masuk
                                     </a>
                                 </li>
@@ -44,10 +47,8 @@
                                     <form action="/logout" method="POST" class="logout-footer border-top p-3">
                                         @csrf
                                         <button type="submit"
-                                            class="nav-link d-flex align-items-center gap-2 btn btn-link p-0 m-0">
-                                            <svg class="bi">
-                                                <use xlink:href="#door-closed"></use>
-                                            </svg>
+                                            class="nav-link d-flex align-items-start gap-2 btn btn-link p-0 m-0">
+                                            <i class="bi bi-box-arrow-left p+3"></i>
                                             Logout
                                         </button>
                                     </form>
