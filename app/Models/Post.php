@@ -11,6 +11,19 @@ class Post extends Model
     protected $guarded = ['id'];
     protected $with = ['author'];
 
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function($query, $search) {
+            return $query->where('title', 'like', '%' . $search . '%')
+            ->orWhere('body', 'like', '%' . $search . '%');
+        });
+        $query->when($filters['author'] ?? false, function($query, $author) {
+            return $query->whereHas('author', function($query) use ($author) {
+                $query->where('slug', $author);
+            });
+        });
+    }
+
     public function author(){
         return $this->belongsTo(User::class, 'user_id');
     }

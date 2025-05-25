@@ -51,7 +51,7 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/authors/{author:username}', function(User $author){
     return view ('renungan', [
         'title' => "Post By Author : $author->name",
-        'posts' => $author->posts->load('category', 'author')
+        'posts' => $author->posts->load('author')
     ]);
 });
 

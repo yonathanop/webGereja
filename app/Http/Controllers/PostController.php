@@ -15,14 +15,13 @@ class PostController extends Controller
     {
         return view('renungan', [
             "title" => "Daftar Renungan",
-            // "posts" => Post::all()
-            "posts" => Post::latest()->get()
+            "posts" => Post::latest()->filter(request(['search', 'author']))->paginate(5)->withQueryString()
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
-     */
+     */   
     public function create()
     {
         //

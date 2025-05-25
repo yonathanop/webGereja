@@ -30,5 +30,7 @@
     @else
         <p class="text-center fs-4">Tidak ada renungan</p>
     @endif
-
+    <div class="d-flex justify-content-end">
+        {{ $posts->links() }}
+    </div>
 @endsection
