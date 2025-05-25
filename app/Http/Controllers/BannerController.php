@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 
@@ -23,7 +23,7 @@ class BannerController extends Controller
     public function create()
     {
         return view('dashboard.banner.create', [
-            'authors' => User::all()
+            'banner' => Banner::all()
         ]);
     }
 
@@ -32,38 +32,79 @@ class BannerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $validatedData = $request->validate([
+        'keterangan' => 'required|max:255',
+        'image' => 'image|file|max:2048',
+    ]);
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        Banner::create($validatedData);
+
+        return redirect()->route('banner.index')->with('success', 'Banner berhasil ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Banner $banner)
     {
-        //
+         return view('dashboard.banner.show', [
+            'banner' => $banner
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Banner $banner)
     {
-        //
+        return view('dashboard.banner.edit', [
+            'banner' => $banner,
+            'Keterangan' => Banner::all()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Banner $banner)
     {
-        //
+         $rules = [
+        'keterangan' => 'required|max:255',
+        'image' => 'image|file|max:1024',
+    ];
+    $validatedData = $request->validate($rules);
+    if($request->file('image')) {
+        if($request->oldImage) {
+            Storage::delete($request->oldImage);
+        }
+        $validatedData['image'] = $request->file('image')->store('post-images');
+    }
+        Banner::where('id', $banner->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/banner')->with('success', 'Banner berhasil diupdate!');
+    
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Banner $banner)
     {
-        //
+        if($banner->image) {
+            Storage::delete($banner->image);
+        }
+        Banner::destroy($banner->id);
+        return redirect('/dashboard/banner')->with('success', 'Banner berhasil Dihapus!');
     }
+    public function showBanner()
+    {
+        $banner = Banner::all();
+        $title = 'Home';
+        return view('home', compact('banner', 'title'));
+    }
+
 }

@@ -18,9 +18,8 @@ class DashboardPostController extends Controller
      */
      public function index()
     {
-        // $this->authorize('admin');
         return view('dashboard.posts.index', [
-            'posts' => Post::where('user_id', Auth::user()->id)->get()
+            'posts' => Post::where('user_id', Auth::user()->id)->latest()->get()
         ]);
     }
 

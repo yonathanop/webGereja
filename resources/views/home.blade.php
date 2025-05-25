@@ -3,13 +3,13 @@
 @section('container')
     <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <di class="d-flex align-items-center justify-content-center vh-100 text-white img-fluid" style="background-image: url('{{ asset('img/lilin.jpg') }}'); background-size: cover; background-position: center;">
-          </div>
-        <div class="carousel-item">
-          <div class="d-flex align-items-center justify-content-center vh-100 text-white img-fluid" style="background-image: url('{{ asset('img/hero1.png') }}'); background-size: cover ; background-position: center;">
-          </div>
+         @foreach ($banner as $key => $bnr)
+      <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+        <div class="d-flex align-items-center justify-content-center text-white img-fluid"
+             style="height: 600px; background-image: url('{{ asset('storage/' . $bnr->image) }}'); background-size: cover; background-position: center;">
         </div>
+      </div>
+    @endforeach
       </div>
       <!-- Chevron (prev/next) -->
       <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">

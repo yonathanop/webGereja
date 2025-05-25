@@ -17,7 +17,7 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">keterangan</th>
-                    <th scope="col">file</th>
+                    <th scope="col">Banner</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
