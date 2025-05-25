@@ -8,15 +8,17 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class DashboardPostController extends Controller
 {
+    use AuthorizesRequests;
     /**
      * Display a listing of the resource.
      */
      public function index()
     {
+        // $this->authorize('admin');
         return view('dashboard.posts.index', [
             'posts' => Post::where('user_id', Auth::user()->id)->get()
         ]);

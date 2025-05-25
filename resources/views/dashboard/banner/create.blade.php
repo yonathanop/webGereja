@@ -1,3 +1,5 @@
+@extends('dashboard.layouts.main')
+@section('container')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,3 +14,4 @@
     </h1>
 </body>
 </html>
+@endsection

@@ -60,7 +60,7 @@ Route::get('/dashboard' , function(){
 })->middleware('auth');
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth', 'admin');
 
 Route::get('/dashboard/kontak', [KontakController::class, 'index']);
 Route::post('/dashboard/kontak', [KontakController::class, 'store']);
