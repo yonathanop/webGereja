@@ -102,9 +102,9 @@ class BannerController extends Controller
     }
     public function showBanner()
     {
-        $banner = Banner::all();
+        $banners = Banner::all();
         $title = 'Home';
-        return view('home', compact('banner', 'title'));
+        return view('home', compact('banners', 'title'));
     }
 
 }

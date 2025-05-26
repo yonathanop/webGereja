@@ -65,12 +65,8 @@ Route::get('/dashboard/kontak', [KontakController::class, 'index']);
 Route::post('/dashboard/kontak', [KontakController::class, 'store']);
 Route::delete('/dashboard/kontak/{kontak}', [KontakController::class, 'destroy'])->name('kontak.destroy');
 
-Route::get('dashboard/banner', [BannerController::class, 'index'])->name('banner.index');
-Route::post('dashboard/banner', [BannerController::class, 'store'])->name('banner.store');
-Route::delete('dashboard/banner/{banner}', [BannerController::class, 'destroy'])->name('banner.destroy');
-Route::get('dashboard/banner/create', [BannerController::class, 'create'])->name('banner.create');
-Route::get('dashboard/banner/{banner}/edit', [BannerController::class, 'edit'])->name('banner.edit');
-Route::put('dashboard/banner/{banner}', [BannerController::class, 'update'])->name('banner.update');
+Route::resource('dashboard/banner', BannerController::class);
+
+
+
 Route::get('/', [BannerController::class, 'showBanner']);
-
-

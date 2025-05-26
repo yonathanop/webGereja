@@ -3,10 +3,10 @@
 @section('container')
     <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-         @foreach ($banner as $key => $bnr)
+         @foreach ($banners as $key => $bnr)
       <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-        <div class="d-flex align-items-center justify-content-center text-white img-fluid"
-             style="height: 600px; background-image: url('{{ asset('storage/' . $bnr->image) }}'); background-size: cover; background-position: center;">
+        <div class="d-flex align-items-center ratio ratio-16x9 justify-content-center text-white img-fluid"
+             style="background-image: url('{{ asset('storage/' . $bnr->image) }}'); background-size: cover; background-position: center;">
         </div>
       </div>
     @endforeach

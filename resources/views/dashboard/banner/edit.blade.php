@@ -4,12 +4,12 @@
         <h1 class="h2">Edit Banner</h1>
     </div>
     <div class="col-lg-8">
-        <form method="post" action="/dashboard/banner/{{ $banner }}" class="mb-5" enctype="multipart/form-data">
+        <form method="post" action="/dashboard/banner/{{ $banner->id }}" class="mb-5" enctype="multipart/form-data">
             @method('put')
             @csrf
             <div class="form-group">
-                <label for="ket">Keterangan Banner</label>
-                <input type="text" class="form-control @error('keterangan') is-invalid  @enderror" id="ket" name="ket" required autofocus value="{{ old('title', $post->title) }}">
+                <label for="keterangan">Keterangan Banner</label>
+                <input type="text" class="form-control @error('keterangan') is-invalid  @enderror" id="keterangan" name="keterangan" required autofocus value="{{ old('keterangan', $banner->keterangan) }}">
                 @error('keterangan')
                     <div class="invalid-feedback">
                         {{ $message }}
