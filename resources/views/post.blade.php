@@ -6,7 +6,8 @@
 
 
         <p>Oleh <a href="/authors/{{ $post->author->username }}" \
-            class="text-decoration-none">{{ $post->author->name }}</a></p>
+            class="text-decoration-none">{{ $post->author->name }} </a>Pada {{ $post->created_at->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y') }}</p>
+        <p></p>
 
             @if ($post->image)
             <div style="max-height: 350px; overflow:hidden;">

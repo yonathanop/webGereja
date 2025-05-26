@@ -18,7 +18,21 @@
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/banner*') ? 'active' : '' }}"
                                         href="/dashboard/banner">
                                         <i class="bi bi-upload"></i>
-                                        Menambah Banner
+                                        Tambah Banner
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/jadwal*') ? 'active' : '' }}"
+                                        href="/dashboard/jadwal">
+                                        <i class="bi bi-plus-circle"></i>
+                                        Tambah Jadwal
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/kegiatan*') ? 'active' : '' }}"
+                                        href="/dashboard/kegiatan">
+                                        <i class="bi bi-plus-circle"></i>
+                                        Tambah Kegiatan
                                     </a>
                                 </li>
                                 </li>

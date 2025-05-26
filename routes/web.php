@@ -7,7 +7,9 @@ use App\Http\Controllers\PostController;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KontakController;
+use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
 
@@ -66,7 +68,8 @@ Route::post('/dashboard/kontak', [KontakController::class, 'store']);
 Route::delete('/dashboard/kontak/{kontak}', [KontakController::class, 'destroy'])->name('kontak.destroy');
 
 Route::resource('dashboard/banner', BannerController::class);
-
+Route::resource('dashboard/jadwal', JadwalController::class);
+Route::resource('dashboard/kegiatan', KegiatanController::class);
 
 
 Route::get('/', [BannerController::class, 'showBanner']);

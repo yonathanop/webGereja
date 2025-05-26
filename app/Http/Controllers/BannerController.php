@@ -51,7 +51,7 @@ class BannerController extends Controller
     public function show(Banner $banner)
     {
          return view('dashboard.banner.show', [
-            'banner' => $banner
+            'banners' => $banner
         ]);
     }
 
@@ -71,7 +71,7 @@ class BannerController extends Controller
      */
     public function update(Request $request, Banner $banner)
     {
-         $rules = [
+        $rules = [
         'keterangan' => 'required|max:255',
         'image' => 'image|file|max:1024',
     ];
