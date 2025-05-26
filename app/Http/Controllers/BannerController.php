@@ -100,11 +100,4 @@ class BannerController extends Controller
         Banner::destroy($banner->id);
         return redirect('/dashboard/banner')->with('success', 'Banner berhasil Dihapus!');
     }
-    public function showBanner()
-    {
-        $banners = Banner::all();
-        $title = 'Home';
-        return view('home', compact('banners', 'title'));
-    }
-
 }
