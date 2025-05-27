@@ -5,10 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\HomeController;
->>>>>>> 55a0739001c6560ded527621d22083f0e5eda8a9
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\JadwalController;
@@ -69,13 +65,7 @@ Route::delete('/dashboard/kontak/{kontak}', [KontakController::class, 'destroy']
 Route::resource('dashboard/banner', BannerController::class)->middleware('admin');
 Route::resource('dashboard/jadwal', JadwalController::class)->middleware('admin');
 Route::resource('dashboard/kegiatan', KegiatanController::class)->middleware('admin');
-<<<<<<< HEAD
 Route::resource('dashboard/pendeta', PendetaController::class)->middleware('admin')->parameters([
     'pendeta' => 'daftarPendeta']);
 Route::get('/', [HomeController::class, 'index']);
 
-=======
-
-Route::get('/', [HomeController::class, 'index']);
-
->>>>>>> 55a0739001c6560ded527621d22083f0e5eda8a9
