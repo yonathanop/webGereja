@@ -40,7 +40,11 @@
                     <tr>
                         <td>{{ $item->informasi }}</td>
                         <td>{{ $item->namaPendeta }}</td>
+<<<<<<< HEAD
                         <td>{{ \Carbon\Carbon::parse($item->waktu)->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y HH:mm') }}</td>
+=======
+                        <td>{{ \Carbon\Carbon::parse($item->waktu)->translatedFormat('d F Y H:i') }}</td>
+>>>>>>> 55a0739001c6560ded527621d22083f0e5eda8a9
                     </tr>
                     @endforeach
                 </tbody>
@@ -64,7 +68,11 @@
                     <tr>
                         <td>{{ $item->informasi }}</td>
                         <td>{{ $item->organisasi }}</td>
+<<<<<<< HEAD
                         <td>{{ \Carbon\Carbon::parse($item->waktu)->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y HH:mm') }}</td>
+=======
+                        <td>{{ \Carbon\Carbon::parse($item->waktu)->translatedFormat('d F Y H:i') }}</td>
+>>>>>>> 55a0739001c6560ded527621d22083f0e5eda8a9
                     </tr>
                     @endforeach
                 </tbody>
