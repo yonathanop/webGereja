@@ -17,8 +17,8 @@
                     </h3>
                     <small class="text-body-secondary">
                         <p>
-                            Oleh <a href="/authors/{{ $post->author->username }}"
-                                class="text-decoration-none">{{ $post->author->name }}</a>
+                            Oleh <a href="/pendeta/{{ $post->pendeta->id }}"
+                                class="text-decoration-none">{{ $post->pendeta->namaPendeta }}</a>
                             {{ $post->created_at->diffForHumans() }}
                         </p>
                     </small>

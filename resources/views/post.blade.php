@@ -5,8 +5,8 @@
         <h2>{{ $post->title }}</h2>
 
 
-        <p>Oleh <a href="/authors/{{ $post->author->username }}" \
-            class="text-decoration-none">{{ $post->author->name }} </a>Pada {{ $post->created_at->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y') }}</p>
+        <p>Oleh <a href="/pendeta/{{ $post->pendeta->namaPendeta }}" \
+            class="text-decoration-none">{{ $post->pendeta->namaPendeta }} </a>Pada {{ $post->created_at->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y') }}</p>
         <p></p>
 
             @if ($post->image)

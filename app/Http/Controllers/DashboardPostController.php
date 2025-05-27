@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
-use App\Models\User;
+use App\Models\Pendeta;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -19,7 +19,7 @@ class DashboardPostController extends Controller
      public function index()
     {
         return view('dashboard.posts.index', [
-            'posts' => Post::where('user_id', Auth::user()->id)->latest()->get()
+            'posts' => Post::with('pendeta')->latest()->get()
         ]);
     }
 
@@ -30,7 +30,7 @@ class DashboardPostController extends Controller
     {
         
         return view('dashboard.posts.create', [
-            'authors' => User::all()
+            'pendeta' => Pendeta::all()
         ]);
     }
 
@@ -43,14 +43,13 @@ class DashboardPostController extends Controller
          $validatedData = $request->validate([
         'title' => 'required|max:255',
         'slug' => 'required|unique:posts',
-        'author' => 'required',
+        'pendeta_id' => 'required|exists:pendeta,id',
         'image' => 'image|file|max:2048',
         'body' => 'required',
     ]);
         if($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('post-images');
         }
-        $validatedData['user_id'] = $validatedData['author'];
         $validatedData['excerpt'] = str()->limit(strip_tags($request->body), 100);
 
         Post::create($validatedData);
@@ -64,7 +63,7 @@ class DashboardPostController extends Controller
     public function show(Post $post)
     {
         return view('dashboard.posts.show', [
-            'post' => $post
+            'post' => $post->load('pendeta')
         ]);
     }
 
@@ -75,7 +74,7 @@ class DashboardPostController extends Controller
     {
         return view('dashboard.posts.edit', [
             'post' => $post,
-            'authors' => User::all()
+            'pendeta' => Pendeta::all()
         ]);
     }
 
@@ -86,14 +85,15 @@ class DashboardPostController extends Controller
     {
         $rules = [
         'title' => 'required|max:255',
-        'user_id' => 'required',
+        'slug' => 'required|unique:posts,slug,' . $post->id,
+        'pendeta_id' => 'required|exists:pendeta,id',
         'image' => 'image|file|max:1024',
         'body' => 'required',
     ];
 
-    if($request->slug != $post->slug) {
-        $rules['slug'] = 'required|unique:posts';
-    }
+    // if($request->slug != $post->slug) {
+    //     $rules['slug'] = 'required|unique:posts';
+    // }
     $validatedData = $request->validate($rules);
     if($request->file('image')) {
         if($request->oldImage) {
@@ -101,7 +101,6 @@ class DashboardPostController extends Controller
         }
         $validatedData['image'] = $request->file('image')->store('post-images');
     }
-    $validatedData['user_id'] = Auth::user()->id;
         $validatedData['excerpt'] = str()->limit(strip_tags($request->body), 100);
 
         Post::where('id', $post->id)

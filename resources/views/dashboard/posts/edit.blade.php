@@ -10,7 +10,7 @@
             @csrf
             <div class="form-group">
                 <label for="title">Judul Renungan</label>
-                <input type="text" class="form-control @error('title') is-invalid  @enderror" id="title" name="title" required autofocus value="{{ old('title', $post->title) }}">
+                <input type="text" class="form-control @error('title') is-invalid  @enderror" id="title" name="title" required value="{{ old('title', $post->title) }}">
                 @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -27,13 +27,13 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="author">Pengkhotbah</label>
-                <select class="form-select" name="user_id">
-                    @foreach ($authors as $author)
-                    @if(old('author', $post->author) == $author->id)
-                        <option value="{{ $author->id }}" selected>{{ $author->name }}</option>
+                <label for="pendeta_id">Pendeta</label>
+                <select class="form-select" name="pendeta_id">
+                    @foreach ($pendeta as $pdt)
+                    @if(old('pendeta_id', $post->pendeta) == $pdt->id)
+                        <option value="{{ $pdt->id }}" selected>{{ $pdt->namaPendeta }}</option>
                     @else
-                        <option value="{{ $author->id }}">{{ $author->name }}</option>
+                        <option value="{{ $pdt->id }}">{{ $pdt->namaPendeta }}</option>
                     @endif
                     @endforeach
                 </select>
@@ -68,6 +68,7 @@
         </form>
     </div>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
         const title = document.querySelector('#title')
         const slug = document.querySelector('#slug')
 
@@ -82,6 +83,7 @@
             e.preventDefault()
         })
         function previewImage() {
+            console.log('Preview image dipanggil!');
             const image = document.querySelector('#image');
             const imgPreview = document.querySelector('.img-preview');
 
@@ -94,5 +96,6 @@
                 imgPreview.src = oFREvent.target.result;
             }
         }
+    });
     </script>
 @endsection

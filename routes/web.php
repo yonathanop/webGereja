@@ -3,12 +3,13 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KontakController;
+use App\Http\Controllers\PendetaController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardPostController;
@@ -64,6 +65,7 @@ Route::delete('/dashboard/kontak/{kontak}', [KontakController::class, 'destroy']
 Route::resource('dashboard/banner', BannerController::class)->middleware('admin');
 Route::resource('dashboard/jadwal', JadwalController::class)->middleware('admin');
 Route::resource('dashboard/kegiatan', KegiatanController::class)->middleware('admin');
-
+Route::resource('dashboard/pendeta', PendetaController::class)->middleware('admin')->parameters([
+    'pendeta' => 'daftarPendeta']);
 Route::get('/', [HomeController::class, 'index']);
 

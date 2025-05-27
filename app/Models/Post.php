@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory, Sluggable;
     protected $guarded = ['id'];
-    protected $with = ['author'];
+    protected $with = ['pendeta'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -17,15 +17,15 @@ class Post extends Model
             return $query->where('title', 'like', '%' . $search . '%')
             ->orWhere('body', 'like', '%' . $search . '%');
         });
-        $query->when($filters['author'] ?? false, function($query, $author) {
-            return $query->whereHas('author', function($query) use ($author) {
-                $query->where('slug', $author);
+        $query->when($filters['pendeta'] ?? false, function($query, $pendeta) {
+            return $query->whereHas('pendeta', function($query) use ($pendeta) {
+                $query->where('slug', $pendeta);
             });
         });
     }
 
-    public function author(){
-        return $this->belongsTo(User::class, 'user_id');
+    public function pendeta(){
+        return $this->belongsTo(Pendeta::class, 'pendeta_id');
     }
     public function getRouteKeyName()
     {

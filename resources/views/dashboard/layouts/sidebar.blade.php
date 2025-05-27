@@ -13,7 +13,7 @@
                                         Dashboard
                                     </a>
                                     @can('admin')
-                                        
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/banner*') ? 'active' : '' }}"
                                         href="/dashboard/banner">
@@ -35,12 +35,18 @@
                                         Tambah Kegiatan
                                     </a>
                                 </li>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'active' : '' }}"
                                         href="/dashboard/posts">
                                         <i class="bi bi-file-earmark-plus-fill"></i>
                                         Buat Renungan
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/pendeta*') ? 'active' : '' }}"
+                                        href="/dashboard/pendeta">
+                                        <i class="bi bi-person-add"></i>
+                                        Tambah Pendeta
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -57,7 +63,7 @@
                                         @csrf
                                         <button type="submit"
                                             class="nav-link d-flex align-items-start gap-2 btn btn-link p-0 m-0">
-                                            <i class="bi bi-box-arrow-left p+3"></i>
+                                            <i class="bi bi-box-arrow-left"></i>
                                             Logout
                                         </button>
                                     </form>

@@ -23,7 +23,7 @@
                 <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid mt-3" alt="{{ $post->title }}">
             </div>
         @endif
-        <p>Oleh <a href="/authors/{{ $post->author->username }}" class="text-decoration-none">{{ $post->author->name }}</a>
+        <p>Oleh <a href="/pendeta/{{ $post->pendeta->namaPendeta }}" class="text-decoration-none">{{ $post->pendeta->namaPendeta }}</a>
 
             {!! $post->body !!}
     </article>

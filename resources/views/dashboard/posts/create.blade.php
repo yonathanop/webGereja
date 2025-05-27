@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="title">Judul Renungan</label>
                 <input type="text" class="form-control @error('title') is-invalid  @enderror" id="title"
-                    name="title" required autofocus value="{{ old('title') }}">
+                    name="title" required value="{{ old('title') }}">
                 @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -28,13 +28,13 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="author">Pengkhotbah</label>
-                <select class="form-select" name="author">
-                    @foreach ($authors as $author)
-                        @if (old('author') == $author->id)
-                            <option value="{{ $author->id }}" selected>{{ $author->name }}</option>
+                <label for="pendeta_id">Pendeta</label>
+                <select class="form-select" name="pendeta_id">
+                    @foreach ($pendeta as $pdt)
+                        @if (old('namaPendeta') == $pdt->id)
+                            <option value="{{ $pdt->id }}" selected>{{ $pdt->namaPendeta }}</option>
                         @else
-                            <option value="{{ $author->id }}">{{ $author->name }}</option>
+                            <option value="{{ $pdt->id }}">{{ $pdt->namaPendeta }}</option>
                         @endif
                     @endforeach
                 </select>
@@ -51,7 +51,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="body">Text Renungan</label>
+                <label>Text Renungan</label>
                 @error('body')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -64,31 +64,34 @@
         </form>
     </div>
     <script>
-        const title = document.querySelector('#title')
-        const slug = document.querySelector('#slug')
+        document.addEventListener('DOMContentLoaded', function() {
+                    const title = document.querySelector('#title')
+                    const slug = document.querySelector('#slug')
 
-        title.addEventListener('change', function() {
-            fetch('/dashboard/posts/checkSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
+                    title.addEventListener('change', function() {
+                        fetch('/dashboard/posts/checkSlug?title=' + title.value)
+                            .then(response => response.json())
+                            .then(data => slug.value = data.slug)
+                    });
 
-        //Disable trix file upload
-        document.addEventListener('trix-file-accept', function(e) {
-            e.preventDefault()
-        })
-        function previewImage() {
-            const image = document.querySelector('#image');
-            const imgPreview = document.querySelector('.img-preview');
+                    //Disable trix file upload
+                    document.addEventListener('trix-file-accept', function(e) {
+                        e.preventDefault()
+                    })
 
-            imgPreview.style.display = 'block';
+                        function previewImage() {
+                            const image = document.querySelector('#image');
+                            const imgPreview = document.querySelector('.img-preview');
 
-            const oFReader = new FileReader();
-            oFReader.readAsDataURL(image.files[0]);
+                            imgPreview.style.display = 'block';
 
-            oFReader.onload = function(oFREvent) {
-                imgPreview.src = oFREvent.target.result;
-            }
-        }
+                            const oFReader = new FileReader();
+                            oFReader.readAsDataURL(image.files[0]);
+
+                            oFReader.onload = function(oFREvent) {
+                                imgPreview.src = oFREvent.target.result;
+                            }
+                        }
+                    });
     </script>
 @endsection
