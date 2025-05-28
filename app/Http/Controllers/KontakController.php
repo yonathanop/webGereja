@@ -46,9 +46,7 @@ class KontakController extends Controller
      */
     public function show(Kontak $kontak)
     {
-        // return view('dashboard.kontak.show', [
-        //     'kontak' => $kontak
-        // ]);
+        //
     }
 
     /**
