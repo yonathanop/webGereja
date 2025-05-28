@@ -68,20 +68,6 @@
         </form>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        const title = document.querySelector('#title')
-        const slug = document.querySelector('#slug')
-
-        title.addEventListener('change', function() {
-            fetch('/dashboard/posts/checkSlug?title=' + title.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-
-        //Disable trix file upload
-        document.addEventListener('trix-file-accept', function(e) {
-            e.preventDefault()
-        })
         function previewImage() {
             console.log('Preview image dipanggil!');
             const image = document.querySelector('#image');
@@ -96,6 +82,20 @@
                 imgPreview.src = oFREvent.target.result;
             }
         }
+        document.addEventListener('DOMContentLoaded', function() {
+        const title = document.querySelector('#title')
+        const slug = document.querySelector('#slug')
+
+        title.addEventListener('change', function() {
+            fetch('/dashboard/posts/checkSlug?title=' + title.value)
+                .then(response => response.json())
+                .then(data => slug.value = data.slug)
+        });
+
+        //Disable trix file upload
+        document.addEventListener('trix-file-accept', function(e) {
+            e.preventDefault()
+        })
     });
     </script>
 @endsection

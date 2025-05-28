@@ -59,7 +59,7 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth', 'admin');
 
 Route::get('/dashboard/kontak', [KontakController::class, 'index'])->middleware('admin');
-Route::post('/dashboard/kontak', [KontakController::class, 'store'])->middleware('admin');
+Route::post('/dashboard/kontak', [KontakController::class, 'store']);
 Route::delete('/dashboard/kontak/{kontak}', [KontakController::class, 'destroy'])->name('kontak.destroy')->middleware('admin');
 
 Route::resource('dashboard/banner', BannerController::class)->middleware('admin');

@@ -55,7 +55,7 @@ class KegiatanController extends Controller
     public function edit(Kegiatan $kegiatan)
     {
         return view('dashboard.kegiatan.edit', [
-            'jadwal' => $kegiatan,
+            'kegiatan' => $kegiatan,
             'informasi' => Kegiatan::all()
         ]);
     }
@@ -68,7 +68,7 @@ class KegiatanController extends Controller
         $rules = [
         'informasi' => 'required|string',
         'waktu' => 'required|date',
-        'namaPendeta' => 'required|string',
+        'organisasi' => 'required|string',
     ];
         $validatedData = $request->validate($rules);
         Kegiatan::where('id', $kegiatan->id)

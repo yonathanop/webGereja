@@ -31,7 +31,7 @@
                             <a href="/dashboard/banner/{{ $bnr->id }}" class="badge bg-info"><i
                                     class="bi bi-eye"></i></a>
                             <a href="/dashboard/banner/{{ $bnr->id }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
-                            <form action="/dashboard/banner/{{ $bnr }}" method="post" class="d-inline">
+                            <form action="/dashboard/banner/{{ $bnr->id }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0" onclick="return confirm('Apakah anda yakin akan menghapus data ?')"><i class="bi bi-x-circle"></i></button>
