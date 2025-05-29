@@ -50,8 +50,8 @@
                     </div>
                 @enderror
             </div>
-            <div class="form-group">
-                <label for="body">Text Renungan</label>
+            <div class="mb-3">
+                <label for="body" class="form-label">Text Renungan</label>
                 @error('body')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror

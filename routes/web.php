@@ -55,8 +55,8 @@ Route::get('/dashboard' , function(){
     return view('dashboard.index');
 })->middleware('admin');
 
-Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth', 'admin');
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth', 'admin');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware(['auth', 'admin']);
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(['auth', 'admin']);
 
 Route::get('/dashboard/kontak', [KontakController::class, 'index'])->middleware('admin');
 Route::post('/dashboard/kontak', [KontakController::class, 'store']);

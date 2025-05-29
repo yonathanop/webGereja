@@ -12,8 +12,8 @@
                                         <i class="bi bi-house-door-fill"></i>
                                         Dashboard
                                     </a>
-                                    @can('admin')
                                 </li>
+                                 @can('admin')
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/banner*') ? 'active' : '' }}"
                                         href="/dashboard/banner">
@@ -57,7 +57,6 @@
                                     </a>
                                 </li>
                                  @endcan
-                                <!-- Tambahkan item lainnya jika perlu -->
                                 <li>
                                     <form action="/logout" method="POST" class="logout-footer border-top p-3">
                                         @csrf
