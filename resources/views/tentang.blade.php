@@ -4,7 +4,7 @@
     <div class="container py-5">
         <div class="row" style="text-align:justify">
             <div class="col-lg-10 mx-auto">
-                <h1 class="display-5 fw-bold mb-4">Sejarah Terbentuknya GPdI di Yogyakarta</h1>
+                <h1 class="display-5 fw-bold mb-4" style="text-align:center">Sejarah Terbentuknya GPdI di Yogyakarta</h1>
                 <p class="lead text-justify mb-4">
                     Daerah ini adalah daerah istimewa yang diperintah oleh Sri Sultan. Kota ini juga dijuluki ”kota gudek”
                     dan ”kota
@@ -16,13 +16,13 @@
                     Jalan Yudonegaran, dipimpin Pdt. Abkaude dibantu Pdt. Johan Van der Lip dan adiknya Pdt. Piet Van der
                     Lip.
                 </p>
-                <p> Antara tahun <strong> 1935-1936 </strong> dibuka lagi dua gereja masing-masing oleh Pdt.
+                <p class="lead text-justify mb-4"> Antara tahun <strong> 1935-1936 </strong> dibuka lagi dua gereja masing-masing oleh Pdt.
                     Johan Van der
                     Lip dengan nama Pinkstervreugd di Jl. Ngupasan dan Pdt. Piet Van der Lip dengan nama Pinksterzending di
                     Sosrowijayan. GPdI Sosrowijayan sekarang digembalakan oleh Pdt. Samuel Suwondo yang melanjutkan
                     kepemimpinan
                     ayahnya, Pdt. Petrus Suwondo.</p>
-                <h2 class="fw-bold mt-5 mb-4">Lahirnya GPdI House of Worship</h2>
+                <h2 class="fw-bold mt-5 mb-4" style="text-align:center">Lahirnya GPdI House of Worship</h2>
                 <p class="lead text-justify mb-4">
                     Pada tahun <strong> 1931 </strong> dengan memakai nama De Pinkster Gemeente pindah lagi ke Ngadiwinatan
                     dan empat tahun
@@ -31,7 +31,7 @@
                     bulan dan
                     kemudian dipindah lagi ke Ronodigdayan menempati rumah kecil yang sangat sederhana.
                 </p>
-                <p>Melihat keadaan yang menyedihkan itu, seorang ibu anggota gereja bernama Ny. Smith yang suaminya bekerja
+                <p class="lead text-justify mb-4">Melihat keadaan yang menyedihkan itu, seorang ibu anggota gereja bernama Ny. Smith yang suaminya bekerja
                     sebagai
                     pegawai tinggi pada Perusahaan kereta Api telah membuka sendiri Kebaktian De Pinkster Gemeente di jalan
                     Sindunegaran
@@ -43,7 +43,7 @@
                     keuangan gereja yang lemah dibanding dengan gereja di Tugu Kulon kemudian dipindahkan ke Bausasran Kidul
                     di bawah
                     pimpinan Pdt. Christ Van Thiel.</p>
-                <p>
+                <p class="lead text-justify mb-4">
                     De Pinkster Gemeente di Bausasran semakin berkembang sehingga pada tahun <strong> 1937 </strong> tempat
                     kebaktian tidak
                     bisa menampung
@@ -63,7 +63,7 @@
                     didirikan
                     Majelis Gereja Pantekosta Yogyakarta.
                 </p>
-                <p>Pada masa pendudukan Belanda tahun <strong> 1948-1949 </strong> Pdt. The Kiem Koei pergi ke Jakarta untuk
+                <p class="lead text-justify mb-4">Pada masa pendudukan Belanda tahun <strong> 1948-1949 </strong> Pdt. The Kiem Koei pergi ke Jakarta untuk
                     mengikuti
                     Musyawarah Besar
                     GPdI. Karena Yogyakarta sebagai ibukota RI waktu itu dinyatakan tertutup, Pdt. The Kiem Koei tinggal di
@@ -79,7 +79,7 @@
                     panitia pembangunan gedung gereja dan berhasil membeli rumah / tanah di Jl. Hayam Wuruk 20 (GPdI Hayam
                     Wuruk).
                 </p>
-                <p>Setelah peletakan batu pertama tanggal <strong> 19 April 1959 </strong> oleh kemurahan Tuhan hanya dalam
+                <p class="lead text-justify mb-4">Setelah peletakan batu pertama tanggal <strong> 19 April 1959 </strong> oleh kemurahan Tuhan hanya dalam
                     waktu 8 bulan gedung
                     gereja itu
                     selesai dibangun dan ditahbiskan pada tanggal <strong> 13 Desember 1959 </strong> oleh pengurus Pusat
@@ -95,18 +95,18 @@
                     membangun rumah, niscaya sia-sialah orang membangunnya.” Alm. Pdt. R. Gideon Sutrisno optimis berkat
                     pimpinan Roh
                     Kudus akan selalu menyertai gerejanya.</p>
-                <p> Di dalam kepemimpinan organisasi GPdI, Pdt. Raden Gideon Sutrisno menjadi anggota Pengurus
+                <p class="lead text-justify mb-4"> Di dalam kepemimpinan organisasi GPdI, Pdt. Raden Gideon Sutrisno menjadi anggota Pengurus
                     Pusat/Majellis
                     Pusat dari tahun <strong>1957</strong> hingga <strong>1984</strong>. Alm. menduduki berbagai posisi di kepengurusan pusat, mulai dari
                     Wakil ketua PP,
                     Sekjen PP, Komisaris PP, dan Penasehat MP.</p>
-                <p>Tahun <strong>1990</strong>, Pdt. Raden Gideon Sutrisno berpulang ke rumah Bapa, lalu pelyananya dilanjutkan oleh istri
+                <p class="lead text-justify mb-4">Tahun <strong>1990</strong>, Pdt. Raden Gideon Sutrisno berpulang ke rumah Bapa, lalu pelyananya dilanjutkan oleh istri
                     (kedua) ibu
                     Pdt. Lianwati. Setelah delapan (8) tahun tidak mampu lagi melayani karena faktor usia (pikun), pada
                     tanggal <strong> 4 Juni 2020 </strong>
                     ibu pdt. Lianawati digantikan oleh Pdm. Raden James Tjahyono, S. Th, cucu kedua dari anak pertama alm.
                     Pdt. Raden Gideon Sutrisno.</p>
-                <p>Pada tanggal <strong> 28 Agustus 2020 </strong> Pdm. Raden James Tjahjono berpulang ke rumah Bapa karena sakit, maka
+                <p class="lead text-justify mb-4">Pada tanggal <strong> 28 Agustus 2020 </strong> Pdm. Raden James Tjahjono berpulang ke rumah Bapa karena sakit, maka
                     pelayanan penggembalaan GPdI Hayam Wuruk dilanjutkan oleh Raden Rara Eva Sekarindah Setjadiningrat, cucu
                     ketiga dari anak pertama alm. Pdt. Raden Gideon Sutrisno.</p>
             </div>

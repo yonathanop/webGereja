@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="mb-5">{{ $title }}</h1>
+    <h1 class="mb-5" style="text-align:center">{{ $title }}</h1>
 
     @if ($posts->count())
         @foreach ($posts as $post)
@@ -17,8 +17,7 @@
                     </h3>
                     <small class="text-body-secondary">
                         <p>
-                            Oleh <a href="/pendeta/{{ $post->pendeta->id }}"
-                                class="text-decoration-none">{{ $post->pendeta->namaPendeta }}</a>
+                            Oleh {{ $post->pendeta->namaPendeta }}
                             {{ $post->created_at->diffForHumans() }}
                         </p>
                     </small>

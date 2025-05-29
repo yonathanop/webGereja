@@ -3,7 +3,7 @@
 @section('container')
     <form method="post" action="/dashboard/kontak">
         @csrf
-        <h2>{{ $title }}</h2>
+        <h2 style="text-align:center">{{ $title }}</h2>
         @if (session()->has('success'))
             <div class="alert alert-success alert-dismissable col-lg-8" role="alert">
                 {{ session('success') }}
@@ -33,7 +33,7 @@
                 <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
                 <textarea class="form-control" name="pesan" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Kirim</button>
+            <button type="submit" class="btn btn-primary mt-3 mb-4">Kirim</button>
         </div>
     </form>
 @endsection
