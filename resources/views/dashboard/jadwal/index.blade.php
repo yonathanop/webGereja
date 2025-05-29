@@ -27,7 +27,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $jdwl->informasi }}</td>
-                        <td>{{ $jdwl->namaPendeta }}</td>
+                        <td>{{ $jdwl->pendeta->namaPendeta ?? '-' }}</td>
                         <td>{{ \Carbon\Carbon::parse($jdwl->waktu)->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y HH:mm') }}</td>
                         <td>
                             <a href="/dashboard/jadwal/{{ $jdwl->id }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>

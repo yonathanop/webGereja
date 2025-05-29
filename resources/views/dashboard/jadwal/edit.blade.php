@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.main')
 @section('container')
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Edit Jadwal</h1>
     </div>
     <div class="col-lg-8">
@@ -18,10 +18,18 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="namaPendeta">Nama Pendeta</label>
-                <input type="text" class="form-control @error('namaPendeta') is-invalid  @enderror" id="namaPendeta"
-                    name="namaPendeta" required autofocus value="{{ old('namaPendeta', $jadwal->namaPendeta) }}">
-                @error('namaPendeta')
+                <label for="pendeta_id">Nama Pendeta</label>
+                <select name="pendeta_id" id="pendeta_id" class="form-control @error('pendeta_id') is-invalid @enderror"
+                    required>
+                    <option value="">Pilih Pendeta</option>
+                    @foreach ($namaPendeta as $pendeta)
+                        <option value="{{ $pendeta->id }}"
+                            {{ old('pendeta_id', $jadwal->pendeta_id) == $pendeta->id ? 'selected' : '' }}>
+                            {{ $pendeta->namaPendeta }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('pendeta_id')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -37,7 +45,7 @@
                     </div>
                 @enderror
             </div>
-            
+
             <button type="submit" class="btn btn-primary mt-3">Edit Jadwal</button>
         </form>
     </div>

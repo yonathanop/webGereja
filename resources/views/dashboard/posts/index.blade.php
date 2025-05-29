@@ -28,7 +28,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $post->created_at->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y HH:mm') }}</td>
                         <td>{{ $post->title }}</td>
-                        <td>{{ $post->pendeta->namaPendeta }}</td>
+                        <td>{{ $post->pendeta->namaPendeta ?? '-' }}</td>
                         <td>
                             <a href="/dashboard/posts/{{ $post->slug }}" class="badge bg-info"><i
                                     class="bi bi-eye"></i></a>

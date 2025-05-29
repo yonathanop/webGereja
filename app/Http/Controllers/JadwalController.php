@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Jadwal;
 use Illuminate\Http\Request;
+use App\Models\Pendeta;
 
 class JadwalController extends Controller
 {
@@ -21,9 +22,8 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        return view('dashboard.jadwal.create', [
-            'jadwal' => Jadwal::all()
-        ]);
+        $namaPendeta = Pendeta::all();
+        return view('dashboard.jadwal.create', compact('namaPendeta'));
     }
 
     /**
@@ -34,7 +34,7 @@ class JadwalController extends Controller
         $validatedData = $request->validate([
         'informasi' => 'required|string',
         'waktu' => 'required|date',
-        'namaPendeta' => 'required|string',
+        'pendeta_id' => 'required|exists:pendeta,id',
     ]);
         jadwal::create($validatedData);
 
@@ -54,10 +54,8 @@ class JadwalController extends Controller
      */
     public function edit(Jadwal $jadwal)
     {
-        return view('dashboard.jadwal.edit', [
-            'jadwal' => $jadwal,
-            'informasi' => Jadwal::all()
-        ]);
+        $namaPendeta = Pendeta::all();
+        return view('dashboard.jadwal.edit', compact('jadwal', 'namaPendeta'));
     }
 
     /**
@@ -68,11 +66,10 @@ class JadwalController extends Controller
          $rules = [
         'informasi' => 'required|string',
         'waktu' => 'required|date',
-        'namaPendeta' => 'required|string',
+        'pendeta_id' => 'required|exists:pendeta,id',
     ];
         $validatedData = $request->validate($rules);
-        Jadwal::where('id', $jadwal->id)
-            ->update($validatedData);
+        $jadwal->update($validatedData);
 
         return redirect('/dashboard/jadwal')->with('success', 'Jadwal berhasil diupdate!');
     }

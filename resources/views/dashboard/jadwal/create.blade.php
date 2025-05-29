@@ -18,10 +18,18 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="namaPendeta">Nama Pendeta</label>
-                <input type="text" class="form-control @error('namaPendeta') is-invalid  @enderror" id="namaPendeta"
-                    name="namaPendeta" required autofocus value="{{ old('namaPendeta') }}">
-                @error('namaPendeta')
+                <label for="pendeta_id">Pilih Pendeta</label>
+                <select name="pendeta_id" id="pendeta_id" class="form-control @error('pendeta_id') is-invalid @enderror"
+                    required>
+                    <option value="">Pilih Pendeta</option>
+                    @foreach ($namaPendeta as $pendeta)
+                        <option value="{{ $pendeta->id }}"
+                            {{ old('pendeta_id') == $pendeta->id ? 'selected' : '' }}>
+                            {{ $pendeta->namaPendeta }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('pendeta_id')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -40,5 +48,4 @@
             <button type="submit" class="btn btn-primary mt-3">Simpan Jadwal</button>
         </form>
     </div>
-
 @endsection
