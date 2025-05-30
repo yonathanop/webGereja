@@ -38,7 +38,7 @@ class JadwalController extends Controller
     ]);
         jadwal::create($validatedData);
 
-        return redirect()->route('jadwal.index')->with('success', 'jadwal berhasil ditambahkan!');
+        return redirect()->route('jadwal.index')->with('success', 'Jadwal berhasil ditambahkan!');
     }
 
     /**

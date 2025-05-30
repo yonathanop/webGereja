@@ -39,7 +39,7 @@
                     @foreach($jadwal as $item)
                     <tr>
                         <td>{{ $item->informasi }}</td>
-                        <td>{{ $item->namaPendeta }}</td>
+                        <td>{{ $item->pendeta->namaPendeta }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->waktu)->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y HH:mm') }}</td>
                     </tr>
                     @endforeach
