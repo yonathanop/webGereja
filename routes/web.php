@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\JadwalController;
@@ -69,3 +70,10 @@ Route::resource('dashboard/pendeta', PendetaController::class)->middleware('admi
     'pendeta' => 'daftarPendeta']);
 Route::get('/', [HomeController::class, 'index']);
 
+Route::prefix('dashboard')->middleware(['auth', 'admin'])->group(function () {
+
+    Route::patch('user/{user}/toggle-admin', [UserController::class, 'toggleAdmin'])->name('user.toggleAdmin');
+
+
+    Route::resource('user', UserController::class);
+});

@@ -50,6 +50,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/user*') ? 'active' : '' }}"
+                                        href="/dashboard/user">
+                                        <i class="bi bi-person-add"></i>
+                                        Managemen User
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/kontak*') ? 'active' : '' }}"
                                         href="/dashboard/kontak">
                                         <i class="bi bi-envelope-open"></i>

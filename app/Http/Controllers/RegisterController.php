@@ -21,6 +21,8 @@ class RegisterController extends Controller
             'password' => 'required|min:8|max:20'
         ]);
         $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['is_admin'] = false;
+
         User::create($validatedData);
         
         return redirect('/login')->with('sukses', 'Pendaftaran berhasil! Silahkan login');
