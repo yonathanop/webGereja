@@ -37,7 +37,7 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Simpan Jadwal</button>
+            <button type="submit" class="btn btn-primary mt-3">Simpan Kegiatan</button>
         </form>
     </div>
 

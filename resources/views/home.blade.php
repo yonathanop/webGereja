@@ -31,7 +31,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th>Informasi</th>
-                        <th>Pendeta</th>
+                        <th>Pembicara</th>
                         <th>Waktu</th>
                     </tr>
                 </thead>

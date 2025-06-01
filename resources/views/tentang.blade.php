@@ -6,7 +6,7 @@
             <div class="col-lg-10 mx-auto">
                 <h1 class="display-5 fw-bold mb-4" style="text-align:center">Sejarah Terbentuknya GPdI di Yogyakarta</h1>
                 <p class="lead text-justify mb-4">
-                    Daerah ini adalah daerah istimewa yang diperintah oleh Sri Sultan. Kota ini juga dijuluki ”kota gudek”
+                    Daerah ini adalah daerah istimewa yang diperintah oleh Sri Sultan. Kota ini juga dijuluki ”kota gudeg”
                     dan ”kota
                     mahasiswa/pelajar.” GPdI Yogyakarta mulai diperkenalkan ketika Pdt. S.I.P. Lumoindong membuka kebaktian
                     pertama

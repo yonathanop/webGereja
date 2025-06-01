@@ -10,7 +10,7 @@
             <a href="https://www.youtube.com/@gpdihw" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
             </a>
-            <a href="https://www.instagram.com/gpdihw?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+            <a href="https://www.instagram.com/gpdihw" target="_blank">
                 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
             </a>
         </div>
