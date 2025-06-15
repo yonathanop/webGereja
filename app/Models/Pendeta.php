@@ -11,10 +11,10 @@ class Pendeta extends Model
 
 
     public function renungans()
-{
-    return $this->hasMany(Post::class);
-}
-public function jadwals()
+    {
+        return $this->hasMany(Post::class);
+    }
+    public function jadwals()
     {
         return $this->hasMany(Jadwal::class, 'pendeta_id');
     }
