@@ -14,7 +14,7 @@
                     <strong>Atas Nama:</strong> Yan Thomas <br>
                     <em>Catatan: Mohon tambahkan keterangan jenis persembahan (misalnya: Persembahan, Syukur, dll.)</em>
                 </p>
-                <h2 style="font-family: Roboto Serif; font-weight:bold;">Persembahan Fisik</h2>
+                <h2 style="font-family: Roboto Serif; font-weight:bold;">Persembahan Tunai</h2>
                 Persembahan dapat diberikan secara langsung di gereja saat ibadah berlangsung melalui kantong
                 persembahan.</p>
 

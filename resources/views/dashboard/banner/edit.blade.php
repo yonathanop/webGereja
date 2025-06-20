@@ -32,7 +32,7 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Edit Renungan</button>
+            <button type="submit" class="btn btn-primary mt-3">Edit Banner</button>
         </form>
     </div>
     <script>

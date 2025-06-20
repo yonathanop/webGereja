@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pendeta extends Model
 {
     protected $table = 'pendeta';
-    protected $guarded = ['id'];
+    protected $fillable = ['namaPendeta'];
+    public $timestamps = false;
 
 
     public function renungans()
