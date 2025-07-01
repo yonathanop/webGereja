@@ -33,7 +33,7 @@ class JadwalController extends Controller
     {
         $validatedData = $request->validate([
         'informasi' => 'required|string',
-        'waktu' => 'required|date',
+        'waktu' => 'required|date|after_or_equal:today',
         'pendeta_id' => 'required|exists:pendeta,id',
     ]);
         jadwal::create($validatedData);
@@ -65,7 +65,7 @@ class JadwalController extends Controller
     {
          $rules = [
         'informasi' => 'required|string',
-        'waktu' => 'required|date',
+        'waktu' => 'required|date|after_or_equal:today',
         'pendeta_id' => 'required|exists:pendeta,id',
     ];
         $validatedData = $request->validate($rules);

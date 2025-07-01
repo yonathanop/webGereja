@@ -25,7 +25,7 @@
         <div class="container mt-4">
     <div class="row justify-content-center">
         @if($jadwal->count())
-        <div class="{{ $kegiatan->count() ? 'col-md-6' : 'col-md-14' }}">
+        <div class="{{ $kegiatan->count() ? 'col-md-14' : '' }}">
             <h5 class="text-center fw-bold">Jadwal Ibadah</h5>
             <table class="table table-bordered table-sm">
                 <thead class="table-dark">
@@ -47,9 +47,10 @@
             </table>
         </div>
         @endif
-
+    </section>
+    <section>
         @if($kegiatan->count())
-        <div class="{{ $jadwal->count() ? 'col-md-6' : 'col-md-14' }}">
+        <div class="{{ $jadwal->count() ? 'col-md-14' : '' }}">
             <h5 class="text-center fw-bold">Kegiatan Gereja</h5>
             <table class="table table-bordered table-sm">
                 <thead class="table-dark">
@@ -57,6 +58,8 @@
                         <th>Informasi</th>
                         <th>Organisasi</th>
                         <th>Waktu</th>
+                        <th>Link</th>
+                        <th>PIC</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,6 +68,14 @@
                         <td>{{ $item->informasi }}</td>
                         <td>{{ $item->organisasi }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->waktu)->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y HH:mm') }}</td>
+                        <td>
+                            @if ($item->link)
+                                <a href="{{ Str::start($item->link, 'https://') }}" target="_blank">
+                                    {{ $item->link }}
+                                </a>
+                            @endif
+                        </td>
+                        <td>{{ $item->pic }}</td>
                     </tr>
                     @endforeach
                 </tbody>

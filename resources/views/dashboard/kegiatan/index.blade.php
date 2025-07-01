@@ -10,7 +10,7 @@
     @endif
 
 
-    <div class="table-responsive col-lg-8">
+    <div class="table-responsive col-lg-10">
         <a href="/dashboard/kegiatan/create" class="btn btn-primary mb-3">Buat Baru</a>
         <table class="table table-striped table-sm">
             <thead>
@@ -19,6 +19,8 @@
                     <th scope="col">Informasi</th>
                     <th scope="col">Organisasi</th>
                     <th scope="col">Waktu</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">PIC</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -29,6 +31,8 @@
                         <td>{{ $acara->informasi }}</td>
                         <td>{{ $acara->organisasi }}</td>
                         <td>{{ \Carbon\Carbon::parse($acara->waktu)->timezone('Asia/Jakarta')->locale('id')->isoFormat('dddd, D MMMM Y HH:mm') }}</td>
+                        <td>{{ $acara->link }}</td>
+                        <td>{{ $acara->pic }}</td>
                         <td>
                             <a href="/dashboard/kegiatan/{{ $acara->id }}/edit" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
                             <form action="/dashboard/kegiatan/{{ $acara->id }}" method="post" class="d-inline">

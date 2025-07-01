@@ -37,7 +37,26 @@
                     </div>
                 @enderror
             </div>
-            
+            <div class="form-group">
+                <label for="link">Link</label>
+                <input type="text" class="form-control @error('link') is-invalid  @enderror" id="link"
+                    name="link" required autofocus value="{{ old('link', $kegiatan->link) }}">
+                @error('link')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="pic">PIC</label>
+                <input type="text" class="form-control @error('pic') is-invalid  @enderror" id="pic"
+                    name="pic" required autofocus value="{{ old('pic', $kegiatan->pic) }}">
+                @error('pic')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
             <button type="submit" class="btn btn-primary mt-3">Edit Kegiatan</button>
         </form>
     </div>

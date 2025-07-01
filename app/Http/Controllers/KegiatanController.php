@@ -36,6 +36,8 @@ class KegiatanController extends Controller
         'informasi' => 'required|string',
         'waktu' => 'required|date',
         'organisasi' => 'required|string',
+        'link'=> 'required|string',
+        'pic'=> 'required|string',
     ]);
         kegiatan::create($validatedData);
 
@@ -70,6 +72,8 @@ class KegiatanController extends Controller
         'informasi' => 'required|string',
         'waktu' => 'required|date',
         'organisasi' => 'required|string',
+        'link'=> 'required|string',
+        'pic'=> 'required|string',
     ];
         $validatedData = $request->validate($rules);
         Kegiatan::where('id', $kegiatan->id)
