@@ -1,6 +1,6 @@
-# 🌐 Web Gereja - GPdI House of Worship
+# 🌐 Web Gereja 
 
-Ini adalah aplikasi website untuk gereja GPdI House of Worship. Website ini dikembangkan menggunakan **Laravel** sebagai backend dan **Blade Template** sebagai frontend.
+Ini adalah aplikasi website untuk gereja. Website ini dikembangkan menggunakan **Laravel** sebagai backend dan bootstrap sebagai frontend.
 
 ## 🚀 Fitur Utama
 
@@ -29,5 +29,5 @@ php artisan migrate
 php artisan serve
 
 # webGereja
-Website untuk GPdI House of Worship
+Website untuk Gereja
 >>>>>>> d6b05ace853f873beb453af7a2250f5b142f2bf4
