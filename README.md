@@ -14,9 +14,8 @@ Ini adalah aplikasi website untuk gereja GPdI House of Worship. Website ini dike
 
 - PHP 8.x + Laravel 10
 - Blade Template Engine
-- Bootstrap / Tailwind (tergantung yang dipakai)
-- MySQL / MariaDB
-
+- Bootstrap 
+- MySQL 
 ## 📦 Instalasi Lokal
 
 ```bash
